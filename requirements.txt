@@ -1,20 +1,2 @@
-Project: Twitter Automation
-
-Description: Create an automation script that creates a twitter account and from it:
-- Tweets a plain text (a simple sentence of any given character amount should suffice)
-- Tweets text and an image attached (any amount of text and any img)
-- Tweets text and a video attached (any amount of text and any video)
-- Tweets text and a link attached (any amount of text and any link)
-
-The script should validate:
-- Account creation
-- Each of the tweets creation
-- Each of the tweets embedded media has proper media (Meaning validate that the tweet with a photo has specifically that and not something else, that the video one has a video and the link one shows a preview of said link).
-- The tweet for embedded video should interact with it (Play vid, pause it, stop, mute, etc)
-
-Rules:
-- Must use Python
-- Must use Pytest
-- Follow PEP8 Guidelines
-- Cannot have test logic within the test cases (Within the tests should only be calls to the page objects and the only thing to be instanced are the page objects. All data, actions, and implementation to the page objects)
-- You have full freedom to use asserts as deemed necessary (Whether you want to use them in the Page Objects or the test itself)
+selenium==3.141.0
+pytest==4.0.1

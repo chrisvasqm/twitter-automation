@@ -1,5 +1,5 @@
 class Page(object):
 
-    def __init__(self, driver):
-        self._driver = driver
-        self._driver.implicitly_wait(10)
+    def __init__(self, browser):
+        self._browser = browser
+        self._browser.implicitly_wait(10)

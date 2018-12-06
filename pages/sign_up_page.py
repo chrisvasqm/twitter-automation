@@ -1,10 +1,10 @@
 from selenium.webdriver.common.by import By
 
 from libraries.pagefactory_support import callable_find_by as find_by
-from pages.page import Page
+from pages.pageobject import PageObject
 
 
-class SignUpPage(Page):
+class SignUpPage(PageObject):
     _toggle_sign_up_type = find_by(how=By.XPATH, using="//div[contains(text(), 'Use ')]")
     _input_name = find_by(how=By.NAME, using="name")
     _input_email = find_by(how=By.NAME, using="email")

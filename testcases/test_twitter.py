@@ -1,4 +1,3 @@
-import time
 import unittest
 
 from selenium import webdriver
@@ -20,7 +19,5 @@ class TwitterTests(unittest.TestCase):
         sign_up_page.sign_up_by_email("name", "chrisvasqm@gmail.com")
         assert sign_up_page.is_email_already_taken() is True
 
-        time.sleep(5)
-
     def tearDown(self):
-        pass
+        self.driver.quit()

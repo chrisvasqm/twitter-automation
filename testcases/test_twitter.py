@@ -1,10 +1,10 @@
-import time
 import unittest
 
 from selenium import webdriver
 
 import config
 from pages.landing_page import LandingPage
+from pages.new_tweet_dialog import NewTweetModal
 
 
 class TwitterTests(unittest.TestCase):
@@ -27,8 +27,13 @@ class TwitterTests(unittest.TestCase):
 
     def test_write_a_tweet(self):
         home_page = self.landing_page.login(config.email, config.password)
+        home_page.open_new_tweet_dialog()
 
-        time.sleep(5)
+        NewTweetModal(self.driver) \
+            .add_message("tweet with plain text") \
+            .submit()
+
+        assert home_page.is_tweet_sent() is True
 
     def tearDown(self):
         self.driver.quit()

@@ -3,11 +3,11 @@ from selenium.webdriver.common.by import By
 import strings
 from libraries.pagefactory_support import callable_find_by as find_by
 from pages.home_page import HomePage
-from pages.page import Page
+from pages.pageobject import PageObject
 from pages.sign_up_page import SignUpPage
 
 
-class LandingPage(Page):
+class LandingPage(PageObject):
     _button_sign_up = find_by(how=By.XPATH, using="//a[contains(text(), 'Sign Up')]")
     _input_email = find_by(how=By.XPATH, using="(//input[@autocomplete='username'])[1]")
     _input_password = find_by(how=By.XPATH, using="(//input[@autocomplete='current-password'])[1]")

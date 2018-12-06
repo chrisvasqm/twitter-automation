@@ -26,7 +26,9 @@ class TwitterTests(unittest.TestCase):
         # TODO: continue the sign up process
 
     def test_write_a_tweet(self):
-        self.landing_page.login(config.email, config.password)
+        home_page = self.landing_page.login(config.email, config.password)
+
+        time.sleep(5)
 
     def tearDown(self):
         self.driver.quit()

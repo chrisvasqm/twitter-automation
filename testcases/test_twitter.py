@@ -1,3 +1,4 @@
+import time
 import unittest
 
 from selenium import webdriver
@@ -17,7 +18,7 @@ class TwitterTests(unittest.TestCase):
 
     def test_create_new_account(self):
         sign_up_page = self.landing_page.go_to_sign_up_page()
-        sign_up_page.sign_up_by_email("name", "chrisvasqm@gmail.com")
+        sign_up_page.sign_up_by_email(config.username, config.email)
 
         if sign_up_page.is_email_already_taken():
             assert True

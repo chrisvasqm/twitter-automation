@@ -6,11 +6,11 @@ from pages.page import Page
 from pages.sign_up_page import SignUpPage
 
 
-class HomePage(Page):
+class LandingPage(Page):
     _button_sign_up = find_by(how=By.XPATH, using="//a[contains(text(), 'Sign Up')]")
 
     def __init__(self, driver):
-        super(HomePage, self).__init__(driver)
+        super(LandingPage, self).__init__(driver)
 
     def open(self):
         self._driver.get(strings.twitter_url)

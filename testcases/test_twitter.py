@@ -21,5 +21,7 @@ class TwitterTests(unittest.TestCase):
         if sign_up_page.is_email_already_taken():
             assert True
 
+        # TODO: continue the sign up process
+
     def tearDown(self):
         self.driver.quit()

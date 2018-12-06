@@ -17,7 +17,8 @@ class TwitterTests(unittest.TestCase):
 
     def test_create_new_account(self):
         sign_up_page = self.home_page.go_to_sign_up_page()
-        sign_up_page.sign_up_by_email("name", "email@gmail.com")
+        sign_up_page.sign_up_by_email("name", "chrisvasqm@gmail.com")
+        assert sign_up_page.is_email_already_taken() is True
 
         time.sleep(5)
 

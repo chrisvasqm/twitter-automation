@@ -13,7 +13,7 @@ class HomePage(Page):
         super(HomePage, self).__init__(driver)
 
     def open(self):
-        self._driver.get(strings.base_url)
+        self._driver.get(strings.twitter_url)
 
     def go_to_sign_up_page(self):
         self._button_sign_up().click()

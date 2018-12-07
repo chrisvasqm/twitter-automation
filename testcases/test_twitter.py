@@ -3,6 +3,7 @@ import unittest
 from selenium import webdriver
 
 import config
+import strings
 from pages.landing_page import LandingPage
 from pages.new_tweet_dialog import NewTweetModal
 
@@ -30,7 +31,7 @@ class TwitterTests(unittest.TestCase):
         home_page.open_new_tweet_dialog()
 
         NewTweetModal(self.driver) \
-            .add_message("tweet with plain text") \
+            .add_message(strings.tweet_plain_text) \
             .submit()
 
         assert home_page.is_tweet_sent() is True
@@ -40,7 +41,7 @@ class TwitterTests(unittest.TestCase):
         home_page.open_new_tweet_dialog()
 
         NewTweetModal(self.driver) \
-            .add_message("tweet with plain text and a photo") \
+            .add_message(strings.tweet_plain_text_and_photo) \
             .add_attachment('/resources/images/much-selenium.jpg') \
             .submit()
 

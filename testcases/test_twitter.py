@@ -35,5 +35,17 @@ class TwitterTests(unittest.TestCase):
 
         assert home_page.is_tweet_sent() is True
 
-    def tearDown(self):
-        self.driver.quit()
+    def test_write_a_tweet_with_a_photo(self):
+        home_page = self.landing_page.login(config.email, config.password)
+        home_page.open_new_tweet_dialog()
+
+        NewTweetModal(self.driver) \
+            .add_message("tweet with plain text and a photo") \
+            .add_attachment('/resources/images/much-selenium.jpg') \
+            .submit()
+
+        assert home_page.is_tweet_sent() is True
+
+
+def tearDown(self):
+    self.driver.quit()

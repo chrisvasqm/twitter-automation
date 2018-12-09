@@ -1,4 +1,5 @@
 import os
+import time
 
 from selenium.webdriver.common.by import By
 
@@ -31,6 +32,12 @@ class NewTweetModal(PageObject):
     def add_attachment(self, path: str):
         self._button_attach_file().send_keys(os.getcwd() + path)
         assert self._image_attached().is_displayed() is True
+        return self
+
+    def add_link(self, url: str):
+        self._input_body().send_keys("\n\n" + url)
+        # To wait for the entire link to be written
+        time.sleep(2)
         return self
 
     def submit(self):

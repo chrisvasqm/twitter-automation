@@ -17,10 +17,6 @@ class NewTweetModal(PageObject):
         how=By.XPATH,
         using="//*[@id='Tweetstorm-tweet-box-0']/div[2]/div[2]/div[1]/span[1]/div/div/label/input"
     )
-    _image_attached = find_by(
-        how=By.XPATH,
-        using="//div[@id='Tweetstorm-tweet-box-0']/div[2]/div[1]/div[3]/div[1]/div/div[1]/div/div[1]/img"
-    )
 
     def __init__(self, driver):
         super(NewTweetModal, self).__init__(driver)

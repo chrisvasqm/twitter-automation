@@ -47,6 +47,10 @@ class TwitterTests(unittest.TestCase):
 
         assert home_page.is_tweet_sent() is True
 
+        home_page.see_new_tweet()
+
+        assert home_page.has_image_preview() is True
+
     def test_write_a_tweet_with_a_link(self):
         home_page = self.landing_page.login(config.email, config.password)
         home_page.open_new_tweet_dialog()

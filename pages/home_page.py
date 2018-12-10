@@ -13,6 +13,7 @@ class HomePage(PageObject):
     _button_see_new_tweet = find_by(how=By.XPATH, using="//button[contains(text(), 'See 1 new Tweet')]")
     _tweet_link_preview = find_by(how=By.XPATH, using="//h2[contains(text(), 'Just Syntactic Sugar')]")
     _iframe = find_by(how=By.XPATH, using="//iframe[contains(@id, 'xdm_default')]")
+    _tweet_image_preview = find_by(how=By.XPATH, using="//div[1]/div[2]/div[3]/div/div/div/div/img")
 
     def __init__(self, driver):
         super(HomePage, self).__init__(driver)
@@ -35,3 +36,6 @@ class HomePage(PageObject):
         has_link = preview.is_displayed()
         self._driver.switch_to.default_content()
         return has_link
+
+    def has_image_preview(self):
+        return self._tweet_image_preview().is_displayed()

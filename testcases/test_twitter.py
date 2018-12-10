@@ -1,5 +1,6 @@
 import unittest
 
+import pytest
 from selenium import webdriver
 
 import config
@@ -22,7 +23,7 @@ class TwitterTests(unittest.TestCase):
         sign_up_page.sign_up_by_email(config.username, config.email)
 
         if sign_up_page.is_email_already_taken():
-            assert True
+            pytest.skip("The email used is already taken.")
 
         # TODO: continue the sign up process
 
